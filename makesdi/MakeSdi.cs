@@ -38,9 +38,6 @@ namespace makesdi
                         case "/*B64*/":
                             writer.WriteLine(Resources.b64);
                             break;
-                        case "/*TYPE*/":
-                            writer.WriteLine("  var imageType={0};", imageType);
-                            break;
                         case "/*DATA*/":
                             using (var aes = new RijndaelManaged())
                             using (var rnd = new RNGCryptoServiceProvider())
@@ -62,7 +59,9 @@ namespace makesdi
                                     cryptoStream.CopyTo(ms);
                                 }
 
-                                returnCode = string.Format("#{0}#{1}", Convert.ToBase64String(key), Convert.ToBase64String(iv));
+                                returnCode = string.Format("{0}", Uri.EscapeUriString(Convert.ToBase64String(key)));
+                                writer.WriteLine("var imageType='{0}';", imageType);
+                                writer.WriteLine("var iv='{0}';", Convert.ToBase64String(iv));
                                 writer.WriteLine("var data='{0}';", Convert.ToBase64String(ms.ToArray()));
                             }
                             break;

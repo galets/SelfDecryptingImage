@@ -100,7 +100,7 @@ namespace makesdi
             using (makeSdi.output)
             {
                 var hash = makeSdi.Process();
-                Console.Error.WriteLine("Access file via {0}{1}", outFileUri, hash);
+                Console.Error.WriteLine("Access file via {0}#{1}", outFileUri, hash);
             }
 
             return 0;

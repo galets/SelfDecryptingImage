@@ -120,7 +120,7 @@ namespace postsdi
                 pf.UploadFile(folderId, targetFileName, new MemoryStream(ms.ToArray()));
 
                 var f = service.Files.Get(folderId).Execute();
-                Console.WriteLine("{0}{1}{2}", f.WebViewLink, targetFileName, hash);
+                Console.WriteLine("{0}{1}#{2}", f.WebViewLink, targetFileName, hash);
 
                 Play("drip");
 
