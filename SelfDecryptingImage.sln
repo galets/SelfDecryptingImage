@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "makesdi", "makesdi\makesdi.csproj", "{22C812DD-5BFA-4AA1-95AC-822541CB049E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "postsdi", "postsdi\postsdi.csproj", "{90556D31-D5EF-4CFB-8CC2-2533B5D74C81}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22C812DD-5BFA-4AA1-95AC-822541CB049E}.Debug|x86.ActiveCfg = Debug|x86
+		{22C812DD-5BFA-4AA1-95AC-822541CB049E}.Debug|x86.Build.0 = Debug|x86
+		{22C812DD-5BFA-4AA1-95AC-822541CB049E}.Release|x86.ActiveCfg = Release|x86
+		{22C812DD-5BFA-4AA1-95AC-822541CB049E}.Release|x86.Build.0 = Release|x86
+		{90556D31-D5EF-4CFB-8CC2-2533B5D74C81}.Debug|x86.ActiveCfg = Debug|x86
+		{90556D31-D5EF-4CFB-8CC2-2533B5D74C81}.Debug|x86.Build.0 = Debug|x86
+		{90556D31-D5EF-4CFB-8CC2-2533B5D74C81}.Release|x86.ActiveCfg = Release|x86
+		{90556D31-D5EF-4CFB-8CC2-2533B5D74C81}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal
