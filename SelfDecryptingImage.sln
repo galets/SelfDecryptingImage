@@ -5,6 +5,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "makesdi", "makesdi\makesdi.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "postsdi", "postsdi\postsdi.csproj", "{90556D31-D5EF-4CFB-8CC2-2533B5D74C81}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E19098C6-414F-44E2-8CCD-53F5427AB771}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,5 +26,7 @@ Global
 		{90556D31-D5EF-4CFB-8CC2-2533B5D74C81}.Debug|x86.Build.0 = Debug|x86
 		{90556D31-D5EF-4CFB-8CC2-2533B5D74C81}.Release|x86.ActiveCfg = Release|x86
 		{90556D31-D5EF-4CFB-8CC2-2533B5D74C81}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal
