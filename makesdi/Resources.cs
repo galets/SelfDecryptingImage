@@ -20,8 +20,13 @@ namespace makesdi
         }
 
         public static string template { get { return GetResource("template.html"); } }
+        #if DEBUG
         public static string aes { get { return GetResource("aes.js"); } }
         public static string b64 { get { return GetResource("b64.js"); } }
+        #else
+        public static string aes { get { return GetResource("aes.min.js"); } }
+        public static string b64 { get { return GetResource("b64.min.js"); } }
+        #endif
         public static string makesdiusage { get { return GetResource("makesdiusage.txt"); } }
 
     }
