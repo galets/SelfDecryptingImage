@@ -1,0 +1,11 @@
+﻿makesdi, generate a seld-decrypting image for secure picture sharing
+
+Usage:
+    makesdi inputfile outputfile [options]
+
+where options are:
+    --type jpeg|png     - specify image type if it cannot be autodetected
+    --title title       - specify title HTML will display
+
+Example:
+    makesdi picture.jpg picture.html

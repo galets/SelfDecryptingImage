@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+ <head>
+    <title/>
+ </head>
+ <body>
+    <p id="text">Please wait while the image is being decrypted...</p>
+    <img id="image"/>
+ </body>
+ <script type="text/javascript">
+ /*DATA*/
+ </script>
+ <script type="text/javascript">
+ /*AES*/
+ </script>
+ <script type="text/javascript">
+ /*B64*/
+ </script>
+ <script type="text/javascript">
+ /*TYPE*/
+ </script>
+ <script type="text/javascript">
+    setTimeout(function() {
+        try {
+            var decryptionParams = window.location.hash.split('#');
+
+            var dataBytes = base64js.toByteArray(data);
+            var keyBytes = base64js.toByteArray(decryptionParams[1]);
+            var ivBytes = base64js.toByteArray(decryptionParams[2]);
+            
+            var decryptedBytes = slowAES.decrypt(dataBytes, slowAES.modeOfOperation.CBC, keyBytes, ivBytes);
+            var decryptesBase64 = base64js.fromByteArray(decryptedBytes);
+            
+            text.style.display = 'none';
+            image.src="data:image/png;base64," + decryptesBase64;
+        }
+        catch(e) {
+            text.innerText = "This image cannot be decrypted. Please make sure you have the correct URL";
+        }
+    }, 100);
+ </script>
+</html>
