@@ -38,6 +38,9 @@ namespace makesdi
                         case "/*B64*/":
                             writer.WriteLine(Resources.b64);
                             break;
+                        case "/*INIT*/":
+                            writer.WriteLine(Resources.init);
+                            break;
                         case "/*DATA*/":
                             using (var aes = new RijndaelManaged())
                             using (var rnd = new RNGCryptoServiceProvider())
