@@ -12,7 +12,7 @@ which is not sent to remote server when requesting resources.
 
 As a result, users could be securely swapping images by sending URLs, which could look like this:
 
-    https://hostname.com/host/file.html#Yc6XHEWmaZQcEzajGab63pWLUsy7ucQ4Wz1hiWtdb3s=#0cLgtAt9rYMxy4t1nDgtbQ==
+    https://hostname.com/host/file.html#Yc6XHEWmaZQcEzajGab63pWLUsy7ucQ4Wz1hiWtdb3s=
 
 When requested on the server, only the following part will be sent:
 
