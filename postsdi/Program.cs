@@ -26,21 +26,28 @@ namespace postsdi
             var assembly = typeof(MainClass).Assembly;
             using (var stream = assembly.GetManifestResourceStream(name))
             {
-                var psi = new ProcessStartInfo()
+                try 
                 {
-                    FileName = "aplay",
-                    Arguments = "- --quiet",
-                    RedirectStandardInput = true,
-                    RedirectStandardOutput = true,
-                    UseShellExecute = false,
-                };
+                    var psi = new ProcessStartInfo()
+                    {
+                        FileName = "aplay",
+                        Arguments = "- --quiet",
+                        RedirectStandardInput = true,
+                        RedirectStandardOutput = true,
+                        UseShellExecute = false,
+                    };
 
-                var aplay = Process.Start(psi);
-                aplay.OutputDataReceived += (object sender, DataReceivedEventArgs e) => { };
-                aplay.BeginOutputReadLine();
-                stream.CopyTo(aplay.StandardInput.BaseStream);
-                aplay.StandardInput.Close();
-                aplay.WaitForExit();
+                    var aplay = Process.Start(psi);
+                    aplay.OutputDataReceived += (object sender, DataReceivedEventArgs e) => { };
+                    aplay.BeginOutputReadLine();
+                    stream.CopyTo(aplay.StandardInput.BaseStream);
+                    aplay.StandardInput.Close();
+                    aplay.WaitForExit();
+                }
+                catch(Exception ex)
+                {
+                    Console.Error.WriteLine("Could not play {0}.wav: {1}", sound, ex.Message);
+                }
             }
         }
 
