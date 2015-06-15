@@ -20,11 +20,6 @@
     <PlatformTarget>x86</PlatformTarget>
     <ConsolePause>false</ConsolePause>
     <Commandlineparameters>screenshot.png file2.html</Commandlineparameters>
-    <CustomCommands>
-      <CustomCommands>
-        <Command type="BeforeBuild" command="./compressjs.sh" />
-      </CustomCommands>
-    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <Optimize>true</Optimize>
@@ -33,11 +28,6 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
     <ConsolePause>false</ConsolePause>
-    <CustomCommands>
-      <CustomCommands>
-        <Command type="BeforeBuild" command="./compressjs.sh" />
-      </CustomCommands>
-    </CustomCommands>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -62,5 +52,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="compressjs.sh" />
+    <None Include="compressjs.bat" />
   </ItemGroup>
+  <Target Name="BeforeBuild">
+    <Exec Command=".\compressjs.bat" Condition=" '$(OS)' == 'Windows_NT' " />
+    <Exec Command="./compressjs.sh" Condition=" '$(OS)' != 'Windows_NT' " />
+  </Target>
 </Project>

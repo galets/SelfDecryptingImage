@@ -25,6 +25,9 @@ thus concealing file decryption key.
 The project is built using monodevelop and requires Mono/.NET 4.5 framework. It is possible to build the project 
 using Visual Studio 2012 and higher.
 
+It is required to have [uglifyjs](https://github.com/mishoo/UglifyJS) installed in order to complete the build.
+To test if it is installed, run `echo 1 | uglifyjs` from command line. There sohuld be no error
+
 # Tools supplied
 
 ## makesdi
