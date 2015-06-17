@@ -83,7 +83,7 @@ namespace postsdi
 
         public static int Main(string[] args)
         {
-            var webFolderName = "posted-self-decrypting-images";
+            var webFolderName = Path.Combine("posted-sdi", Guid.NewGuid().ToString("N"));
             var helpOptions = "--help,-help,/?,-h,-?";
             if (args.Length == 0 || args.Length > 1 || helpOptions.Split(',').Contains(args[0].ToLowerInvariant()))
             {
@@ -124,11 +124,11 @@ namespace postsdi
                 var pf = new PublicFolder(service);
                 var folderId = pf.Setup(webFolderName).GetAwaiter().GetResult();
 
-                var targetFileName = string.Format("{0:N}.html", Guid.NewGuid());
+                var targetFileName = string.Format("index.html", Guid.NewGuid());
                 pf.UploadFile(folderId, targetFileName, new MemoryStream(ms.ToArray()));
 
                 var f = service.Files.Get(folderId).Execute();
-                Console.WriteLine("{0}{1}#{2}", f.WebViewLink, targetFileName, hash);
+                Console.WriteLine("{0}#{2}", f.WebViewLink, targetFileName, hash);
 
                 Play("drip");
 
