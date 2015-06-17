@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using makesdi;
 using System.Diagnostics;
+using System.Net;
 
 namespace postsdi
 {
@@ -140,6 +141,12 @@ namespace postsdi
                 #else
                 Console.Error.WriteLine("Error: {0}", ex.Message);
                 #endif
+
+                var webEx = ex as WebException;
+                if (webEx != null && webEx.Status == WebExceptionStatus.SendFailure)
+                {
+                    Console.Error.WriteLine("This error may be fixable by running 'mozroots --import'");
+                }
 
                 Play("sonar");
 
