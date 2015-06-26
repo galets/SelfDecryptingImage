@@ -4,8 +4,16 @@
     <title/>
  </head>
  <body>
-    <p id="text">Please wait while the image is being decrypted...</p>
-    <img id="image"/>
+    <div id="keyprompt" style="display:none">
+        <h2>No decryption key supplied</h2>
+        <p>Enter Key: 
+            <input type="text" id="key2" maxlength="50" size="50" onchange="setUrlText(key2.value)" onkeypress="setUrlText(key2.value)" /> 
+            <input type="submit" onclick="javascript:decrypt(key2.value)"/>
+        </p>
+        <p>Url to access this image: <a id="url1" href=""></a></p>
+    </div>
+    <div id="text" style="display:none"><p>Please wait while the image is being decrypted...</p></div>
+    <img id="image" style="display:none"/>
  </body>
  <script type="text/javascript">
  /*DATA*/
